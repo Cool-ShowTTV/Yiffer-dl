@@ -8,7 +8,6 @@ def getPageCount(name):
 def getPage(name, page):
     page = format(page, "03d")
     url = f'https://static.yiffer.xyz/comics/{name}/{page}.jpg'
-    print(url)
     response = requests.get(url)
     return response.content
 
@@ -21,6 +20,7 @@ def downloadComic(name):
     pageCount = getPageCount(name)
     for page in range(1, pageCount + 1):
         downloadPage(name, page)
+    print(f'Finished downloading {pageCount} pages of {name}')
 
 if __name__ == '__main__':
     comicName = input('Comic name: ')
