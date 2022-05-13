@@ -1,6 +1,8 @@
 # Yiffer api
 (NSFW) Downloader for yiffer.xyz
 
+If you need a good comic reader I suggest [Nekoview](https://store.steampowered.com/app/1197580/Nekoview/) on steam its free.
+
 # How to run
 Just run the download file in python
 ```cmd
