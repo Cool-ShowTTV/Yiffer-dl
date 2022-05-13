@@ -35,8 +35,8 @@ class Comic:
 
     def downloadPage(name, page):
         '''Download the given comic name and page number'''
-        if not os.path.exists(comicName):
-            os.makedirs(comicName)
+        if not os.path.exists(f'comics/{comicName}'):
+            os.makedirs(f'comics/{comicName}')
         with open(f'{name}/{format(page, "03d")}.jpg', 'wb') as f:
             f.write(Comic.getPage(name, page))
 
