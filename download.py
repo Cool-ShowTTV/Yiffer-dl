@@ -35,7 +35,6 @@ class Comic:
 
     def downloadPage(name, page):
         '''Download the given comic name and page number'''
-        print(f'Downloading page {page} of "{name}"', end='\r')
         if not os.path.exists(comicName):
             os.makedirs(comicName)
         with open(f'{name}/{format(page, "03d")}.jpg', 'wb') as f:
@@ -46,6 +45,7 @@ class Comic:
         pageCount = Info.getPageCount(name)
         print(f'Downloading "{name}" with {pageCount} pages')
         for page in range(1, pageCount + 1):
+            print(f'Downloading page {page}/{pageCount}', end='\r')
             Comic.downloadPage(name, page)
         print(f'Finished downloading {pageCount} pages of "{name}"')
 
