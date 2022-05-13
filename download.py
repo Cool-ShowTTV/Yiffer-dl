@@ -1,6 +1,18 @@
 import requests, os
 
 class Info:
+    def search(search = "", page = 1):
+        try: 
+            from urllib.parse import urlencode
+        except ImportError:
+            print("Please install urllib")
+            return
+        data = {'search': search, 'page': page}
+        url = "https://yiffer.xyz/api/comicsPaginated" + "?" + urlencode(data)
+        response = requests.get(url)
+        response = response.json()
+        return response
+
     def getPageCount(name):
         '''Get the page count of the given comic name'''
         url = f'https://yiffer.xyz/api/comics/{name}'
