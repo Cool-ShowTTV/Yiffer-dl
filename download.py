@@ -12,6 +12,12 @@ class Info:
         response = requests.get(url)
         response = response.json()
         return response
+        
+    def getName(name):
+        url = f'https://yiffer.xyz/api/comics/{name}'
+        response = requests.get(url)
+        response = response.json()
+        return response['name']
 
     def getPageCount(name):
         '''Get the page count of the given comic name'''
@@ -54,12 +60,13 @@ class Comic:
 
     def downloadComic(name):
         '''Download the entire given comic'''
-        pageCount = Info.getPageCount(name)
-        print(f'Downloading "{name}" with {pageCount} pages')
+        comicName = Info.getName(name)
+        pageCount = Info.getPageCount(comicName)
+        print(f'Downloading "{comicName}" with {pageCount} pages')
         for page in range(1, pageCount + 1):
             print(f'Downloading page {page}/{pageCount}', end='\r')
-            Comic.downloadPage(name, page)
-        print(f'Finished downloading {pageCount} pages of "{name}"')
+            Comic.downloadPage(comicName, page)
+        print(f'Finished downloading {pageCount} pages of "{comicName}"')
 
 if __name__ == '__main__':
     comicName = input('Comic name: ')
