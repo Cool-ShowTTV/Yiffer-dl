@@ -1,5 +1,5 @@
-#cIgnore downloaded images during testing
-*.jpg
+# Ignore downloaded items during testing
+*/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -52,3 +52,12 @@ class Comic:
 if __name__ == '__main__':
     comicName = input('Comic name: ')
     Comic.downloadComic(comicName)
+    with open(f'comics/{comicName}/! Tags.txt', 'w') as f:
+        tags = Info.getTags(comicName)
+        for tag in tags:
+            f.write(tag + '\n')
+    with open(f'comics/{comicName}/! Rating.txt', 'w') as f:
+        rating = Info.getRating(comicName)
+        f.write(f'{rating}/10\n')
+        presentage = round(rating * 10)
+        f.write(f'{presentage}%')
