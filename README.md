@@ -13,4 +13,5 @@ python ./download.py
 * Requests
 
 # Note:
-### If the owner of Yiffer <sub><sub><b>(Melon_mow)</b></sub></sub> wants me to take this down my contact is on my profile
+### If the owner of Yiffer wants me to take this down my contact is on my profile
+Also if you are making your own Yiffer.xyz script feel free to look at my [API writedown](https://github.com/Cool-ShowTTV/Yiffer-API)
