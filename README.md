@@ -1,3 +1,6 @@
+> [!WARNING]
+> Broken do to the APIs being removed, all images are now embedded
+
 # Yiffer api
 (NSFW) Downloader for yiffer.xyz
 
